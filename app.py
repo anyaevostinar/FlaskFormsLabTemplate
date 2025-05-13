@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 import csv
 
 '''
@@ -22,7 +22,7 @@ def index():
     Renders the index page
     :return: The index page
     '''
-    return 'Hello, World!'
+    return render_template('index.html')
 
 @app.route('/<row>/<column>', strict_slashes=False)
 def get_cell(row, column):
